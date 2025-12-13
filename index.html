@@ -735,7 +735,112 @@
         display: none;
       }
     }
+    /* ---------- Mobile upgrades ---------- */
+
+html { scroll-behavior: smooth; }
+
+/* Improve touch targets */
+a, button { -webkit-tap-highlight-color: transparent; }
+.nav-cta, .btn-primary, .btn-secondary, .contact-submit button, .coming-form button {
+  min-height: 44px;
+}
+
+/* Mobile nav button */
+.menu-btn{
+  display:none;
+  width:44px; height:44px;
+  border-radius:12px;
+  border:1px solid rgba(148,163,184,.35);
+  background:#fff;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.menu-btn span{
+  display:block;
+  width:18px; height:2px;
+  background: var(--text-main);
+  position:relative;
+}
+.menu-btn span::before,
+.menu-btn span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px; height:2px;
+  background: var(--text-main);
+}
+.menu-btn span::before{ top:-6px; }
+.menu-btn span::after{ top:6px; }
+
+/* Mobile nav panel */
+.mobile-nav{
+  display:none;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 0.85rem 1.5rem 1.2rem;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+}
+.mobile-nav a{
+  display:block;
+  padding: 0.8rem 0.2rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+.mobile-nav a + a{
+  border-top: 1px dashed rgba(148, 163, 184, 0.35);
+}
+.mobile-nav .mobile-cta{
+  margin-top: 0.8rem;
+  display:inline-flex;
+  width:100%;
+  justify-content:center;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color:#fff;
+  font-weight:500;
+}
+
+/* Make hero cleaner on small screens */
+@media (max-width: 640px){
+  #home{ padding-top: 3.4rem; padding-bottom: 3.4rem; }
+  section{ padding: 3.4rem 0; }
+  .section-title{ font-size: 1.8rem; }
+  .section-subtitle{ font-size: 0.95rem; margin-bottom: 2rem; }
+
+  .hero-title{ font-size: 2rem; line-height: 1.12; }
+  .hero-subtitle{ font-size: 1rem; }
+  .hero-tagline{ font-size: 0.92rem; }
+
+  .hero-buttons{ gap: 0.7rem; }
+  .btn-primary, .btn-secondary{ width: 100%; justify-content:center; text-align:center; }
+
+  .hero-meta{ gap: 1rem; }
+  .hero-img{ min-height: 220px; }
+  .hero-img-placeholder{ width: 90%; }
+
+  .project-media{ height: 175px; }
+  .contact-card{ padding: 1.6rem; }
+  .coming-img{ min-height: 200px; }
+}
+
+/* Tablet refinement */
+@media (max-width: 960px){
+  .menu-btn{ display:flex; }
+}
+
+/* Turn on the mobile nav when active */
+.mobile-nav.open{ display:block; }
+
+/* Hide desktop nav links on smaller screens (you already do this, keeping consistent) */
+@media (max-width: 960px){
+  nav ul{ display:none; }
+}
+
   </style>
+
 </head>
 <body>
 
@@ -745,6 +850,7 @@
       <div class="logo-mark">L</div>
       <span>Likhith Yedida</span>
     </a>
+
     <nav>
       <ul>
         <li><a href="#services">What I Do</a></li>
@@ -754,9 +860,26 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
     <a href="#contact" class="nav-cta">Get in touch</a>
+
+    <!-- Mobile menu button -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services">What I Do</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a class="mobile-cta" href="#contact">Get in touch</a>
   </div>
 </header>
+
 
 <main>
   <!-- Hero -->
@@ -1239,6 +1362,29 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </footer>
+<script>
+  // Mobile nav toggle
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  menuBtn?.addEventListener("click", () => {
+    const isOpen = mobileNav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  // Close mobile nav when a link is clicked
+  mobileNav?.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Year helper (keep if you already have it)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>
+
 
 </body>
 </html>
