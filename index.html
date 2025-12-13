@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Likhith Yedida – Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #ff5c5c;
+      --accent-soft: #ffe4e4;
+      --primary: #4a6cff;
+      --primary-soft: #e4e9ff;
+      --bg: #ffffff;
+      --text-main: #1b1b2f;
+      --text-muted: #6b7280;
+      --card-radius: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0.4rem auto 2.5rem;
+      font-size: 0.98rem;
+    }
+
+    /* Navbar */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ff9f9f, #ff5c5c);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 12px 24px rgba(80, 102, 255, 0.35);
+    }
+
+    /* Hero */
+
+    #home {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.9rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      max-width: 520px;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 16px 30px rgba(80, 102, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.88rem;
+    }
+
+    .hero-img {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(135deg, #dbeafe, #fee2e2);
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .hero-img-placeholder {
+      width: 85%;
+      border-radius: 24px;
+      background: #0f172a;
+      padding: 1.2rem 1.4rem;
+      color: #e5e7eb;
+      font-size: 0.78rem;
+    }
+
+    .hero-img-placeholder h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 1.3rem;
+      right: 1.4rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+    }
+
+    /* Services */
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .pillar {
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 1.8rem 1.7rem 1.7rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .pillar-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.9rem;
+      color: var(--accent);
+    }
+
+    .pillar h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pillar ul li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    /* About + Experience + Education */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.7rem;
+      margin-top: 1.9rem;
+    }
+
+    .meta-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 1.4rem 1.3rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .meta-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .timeline li + li {
+      margin-top: 0.8rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.6);
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      color: var(--text-main);
+      display: block;
+    }
+
+    .timeline-company {
+      display: block;
+      font-size: 0.83rem;
+      margin-top: 0.1rem;
+    }
+
+    .timeline-time {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 0.12rem;
+    }
+
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .project-media {
+      background: #0f172a;
+      height: 160px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-media span {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+    }
+
+    .project-body {
+      padding: 1.3rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .project-body h3 {
+      font-size: 1rem;
+    }
+
+    .project-tags {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .project-body p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .project-link {
+      margin-top: auto;
+      font-size: 0.84rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Testimonial */
+
+    .testimonial {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #f9fafb;
+      border-radius: var(--card-radius);
+      padding: 2rem 2.2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 1.1rem;
+      font-style: normal;
+      color: var(--text-main);
+    }
+
+    .testimonial span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Blog */
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 1.6rem 1.5rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      font-size: 0.9rem;
+    }
+
+    .blog-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .blog-card p {
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .blog-card a {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .blog-cta {
+      text-align: center;
+      margin-top: 2.2rem;
+    }
+
+    .blog-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.86rem;
+      color: var(--text-main);
+      background: #fff;
+    }
+
+    /* Coming soon */
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .coming-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .coming-form {
+      margin-top: 1.2rem;
+    }
+
+    .coming-form label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .coming-form input {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .coming-form button {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 999px;
+      padding: 0.85rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 12px 24px rgba(80, 102, 255, 0.35);
+    }
+
+    .coming-note {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .coming-img {
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      color: #e5e7eb;
+      font-size: 0.86rem;
+      padding: 1.4rem;
+    }
+
+    /* Contact */
+
+    .contact-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 2rem 2.2rem 1.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .contact-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .field-group label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .field-group input,
+    .field-group textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.95);
+      padding: 0.7rem 0.8rem;
+      font-size: 0.9rem;
+      resize: vertical;
+      min-height: 44px;
+    }
+
+    .field-group textarea {
+      min-height: 110px;
+    }
+
+    .contact-submit {
+      margin-top: 0.4rem;
+    }
+
+    .contact-submit button {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 0.9rem 1.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 16px 30px rgba(80, 102, 255, 0.4);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.6rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .hero,
+      .about-grid,
+      .portfolio-grid,
+      .blog-grid,
+      .coming-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-img {
+        order: -1;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-meta-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .pillars {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .portfolio-grid,
+      .blog-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#home" class="logo">
+      <div class="logo-mark">L</div>
+      <span>Likhith Yedida</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#services">What I Do</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home">
+    <div class="wrapper hero">
+      <div>
+        <div class="eyebrow">Data Analyst & Analytics Consultant</div>
+        <h1 class="hero-title">
+          Turning raw data into <span>clear, actionable stories</span>.
+        </h1>
+        <p class="hero-subtitle">
+          I collect, clean, analyse and visualise data so product, operations and leadership teams can make confident, strategic decisions.
+        </p>
+        <p class="hero-tagline">
+          From basic status reporting to advanced analytics and predictive models – I build end-to-end solutions that teams actually use.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn-primary">View portfolio</a>
+          <a href="#contact" class="btn-secondary">Let’s talk about your data</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>Core tools</strong>
+            SQL · Power BI · Tableau · GA4 · Python · Snowflake · Google BigQuery
+          </div>
+          <div>
+            <strong>Focus</strong>
+            Strategy, solutions, UX/UI, process improvement, advanced analytics & predictive modelling
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <!-- Replace with your own photo or dashboard collage -->
+        <div class="hero-img-placeholder">
+          <h3>Data in → decisions out</h3>
+          <p>Examples from my work in credit card analytics, retail sales, Covid-19 reporting, telecom churn, marketing experiments and data quality pipelines.</p>
+        </div>
+        <div class="hero-tag">Real-world analytics projects</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="wrapper">
+      <div class="section-title">How I work with data</div>
+      <p class="section-subtitle">
+        I support every step of the analytics lifecycle – from capturing the right data, to process improvement in pipelines, to UX/UI-friendly dashboards and communication with stakeholders.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">📥</div>
+          <h3>Discover & Collect</h3>
+          <p>
+            I start with the questions and decisions that matter, then map the data we have and the data we need – making sure the basics are captured correctly.
+          </p>
+          <ul>
+            <li>Data discovery across SQL, spreadsheets, GA4 and other tools</li>
+            <li>Basic statistics, data profiling and quality checks</li>
+            <li>Defining events, metrics and tracking plans</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚙️</div>
+          <h3>Model & Analyse</h3>
+          <p>
+            Using SQL, Python and cloud warehouses, I build reliable models and analyses that stand up to scrutiny and can be reused by the wider team.
+          </p>
+          <ul>
+            <li>Data modelling in PostgreSQL, Snowflake and BigQuery</li>
+            <li>Advanced analytics: segmentation, cohort analysis & forecasting</li>
+            <li>Predictive models where they add clear business value</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📊</div>
+          <h3>Visualise & Communicate</h3>
+          <p>
+            I design UX/UI-friendly dashboards and reports that make complex statistics easy to understand and act on, for both technical and non-technical audiences.
+          </p>
+          <ul>
+            <li>Power BI & Tableau dashboards with clear status indicators</li>
+            <li>Accessibility, UX/UI and storytelling best practices</li>
+            <li>End-to-end delivery with stakeholder workshops and training</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About + Experience + Education -->
+  <section id="about">
+    <div class="wrapper">
+      <div class="section-title">About me</div>
+      <p class="section-subtitle">
+        A data analyst who loves pairing solid statistics with clean UX/UI and clear communication – so data becomes a strategic asset, not just a report.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I’m Likhith, a consulting-style data analyst with experience across credit cards, banking and hospitality. I specialise in building end-to-end analytics solutions: from defining what to measure and capturing the data, to advanced analytics, predictive models and dashboards that are easy for stakeholders to use.
+          </p>
+          <p>
+            My work blends strategy, statistics and design. I’m comfortable speaking with both engineering and business teams, turning their questions into data models and visual stories. I spend a lot of time on process improvement – simplifying pipelines, improving data quality and making sure metrics stay consistent across reports.
+          </p>
+          <p>
+            Day-to-day, I work with SQL, Python, Power BI, Tableau, GA4, Snowflake and Google BigQuery. I care about accessibility, UX/UI for dashboards, and basic to advanced analytics that genuinely support decisions. The outcome I aim for is simple: clear status, shared understanding and collaborative decisions that move the business forward.
+          </p>
+
+          <div class="about-meta-grid">
+            <!-- Experience -->
+            <div class="meta-card">
+              <h3>Experience</h3>
+              <ul class="timeline">
+                <li>
+                  <span class="timeline-role">Data Analyst</span>
+                  <span class="timeline-company">Synchrony – Stamford, CT, USA</span>
+                  <span class="timeline-time">Jul 2024 – Present</span>
+                  <span>
+                    Supporting credit card analytics with SQL, dashboards and predictive insights for risk, marketing and operations teams.
+                  </span>
+                </li>
+                <li>
+                  <span class="timeline-role">Data Analyst</span>
+                  <span class="timeline-company">Citicorp Credit Services Inc. – Hyderabad, India</span>
+                  <span class="timeline-time">Jul 2021 – Jul 2023</span>
+                  <span>
+                    Built reporting and analytics solutions on customer, risk and operations data; collaborated closely with engineering and product teams.
+                  </span>
+                </li>
+                <li>
+                  <span class="timeline-role">Data Analyst</span>
+                  <span class="timeline-company">Marriott International Inc. – Hyderabad, India</span>
+                  <span class="timeline-time">Jul 2020 – Jun 2021</span>
+                  <span>
+                    Designed dashboards and analyses to track occupancy, revenue, loyalty and guest experience, supporting operations and strategy.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Education -->
+            <div class="meta-card">
+              <h3>Education</h3>
+              <ul class="timeline">
+                <li>
+                  <span class="timeline-role">Master of Science in Computer Science</span>
+                  <span class="timeline-company">University of New Haven – New Haven, CT, USA</span>
+                  <span>
+                    Graduate studies with a strong focus on data analysis, software engineering and using data to design practical, business-focused solutions.
+                  </span>
+                </li>
+                <li>
+                  <span class="timeline-role">Bachelor of Technology in Computer Science</span>
+                  <span class="timeline-company">K L University – Vijayawada, Andhra Pradesh, India</span>
+                  <span>
+                    Built a solid foundation in computer science, programming and quantitative thinking, which I now apply to real-world analytics projects.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work style -->
+        <div class="meta-card">
+          <h3>What it’s like to work with me</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.8rem;">
+            I like to keep things collaborative and pragmatic. My typical projects look like:
+          </p>
+          <ul class="timeline">
+            <li>
+              <span class="timeline-role">1. Clarify the decision</span>
+              <span>
+                Align on the question, success metrics and who will use the output – strategy before SQL.
+              </span>
+            </li>
+            <li>
+              <span class="timeline-role">2. Build the data foundation</span>
+              <span>
+                Integrate sources, improve process, add data quality checks and document the logic.
+              </span>
+            </li>
+            <li>
+              <span class="timeline-role">3. Design UX/UI & visuals</span>
+              <span>
+                Create dashboards with clear status, intuitive layouts and accessibility in mind.
+              </span>
+            </li>
+            <li>
+              <span class="timeline-role">4. Communicate & iterate</span>
+              <span>
+                Walk stakeholders through insights, gather feedback and iterate until it feels natural for them.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="wrapper">
+      <div class="section-title">Portfolio</div>
+      <p class="section-subtitle">
+        A sample of my analytics work. Each project includes end-to-end thinking: data strategy, integration, analysis, UX/UI design and clear communication of insights.
+      </p>
+
+      <div class="portfolio-grid">
+        <!-- Project 1: Credit card fraud analytics -->
+        <article class="project-card">
+          <div class="project-media">
+            <!-- you’ll replace with your own image -->
+            <img src="images/creditcard_fraud_analytics.png" alt="Credit card fraud analytics" />
+            <span>Fraud & risk</span>
+          </div>
+          <div class="project-body">
+            <h3>Credit Card Fraud Analytics</h3>
+            <div class="project-tags">Python · SQL · Advanced analytics · Predictive model</div>
+            <p>
+              End-to-end fraud analytics on credit card transactions, including feature engineering, model building and evaluation, and interpretation of fraud risk patterns for stakeholders.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/creditcard_fraud_analytics" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 2: Walmart sales Power BI -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/walmart_sales_powerbi_project.png" alt="Walmart sales Power BI project" />
+            <span>Retail analytics</span>
+          </div>
+          <div class="project-body">
+            <h3>Walmart Sales Power BI Project</h3>
+            <div class="project-tags">Power BI · PostgreSQL · DAX · Process improvement</div>
+            <p>
+              Designed interactive dashboards to analyse weekly sales, promotions, stores and departments. Implemented data quality checks in SQL and reusable measures to keep reporting consistent.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/walmart_sales_powerbi_project" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 3: Covid-19 analysis -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/covid19_analysis.png" alt="Covid-19 analysis" />
+            <span>Public health</span>
+          </div>
+          <div class="project-body">
+            <h3>Covid-19 Analysis</h3>
+            <div class="project-tags">Power BI · Statistics · UX/UI · Accessibility</div>
+            <p>
+              Built multi-page dashboards on Covid-19 infections, recoveries and deaths across regions. Focused on clear interaction design so non-technical users could explore trends safely.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/covid19_analysis" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 4: Telecom churn analysis -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/telecom_churn_analysis.png" alt="Telecom churn analysis" />
+            <span>Customer churn</span>
+          </div>
+          <div class="project-body">
+            <h3>Telecom Churn Analysis</h3>
+            <div class="project-tags">SQL · Power BI · Segmentation · Predictive model</div>
+            <p>
+              End-to-end telecom churn project covering data modelling, exploratory analysis, churn drivers and dashboards for customer success teams to target at-risk customers.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/telecom_churn_analysis" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 5: Marketing analytics A/B testing -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/marketing_analytics_AB_testing.png" alt="Marketing analytics A/B testing" />
+            <span>Experimentation</span>
+          </div>
+          <div class="project-body">
+            <h3>Marketing Analytics – A/B Testing</h3>
+            <div class="project-tags">Python · Statistics · Experiment design · Advanced analytics</div>
+            <p>
+              Analysed A/B tests for marketing campaigns using statistical methods to compare variants, estimate lift and communicate results in a business-friendly way.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/marketing_analytics_AB_testing" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 6: Retail supply chain optimisation -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/retail_supplychain_optimization.png" alt="Retail supply chain optimization" />
+            <span>Supply chain</span>
+          </div>
+          <div class="project-body">
+            <h3>Retail Supply Chain Optimisation</h3>
+            <div class="project-tags">SQL · Power BI · Operations analytics</div>
+            <p>
+              Analysed inventory, lead times and service levels to identify optimisation opportunities in a retail-style supply chain dataset, with dashboards to monitor KPIs.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/retail_supplychain_optimization" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 7: Data quality pipeline -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="images/data_quality_pipeline.png" alt="Data quality pipeline" />
+            <span>Process improvement</span>
+          </div>
+          <div class="project-body">
+            <h3>Data Quality Pipeline</h3>
+            <div class="project-tags">Python · SQL · Automation · Process improvement</div>
+            <p>
+              Implemented reusable data quality checks for completeness, duplicates and referential integrity, surfacing results in a status view so teams could fix issues before they hit dashboards.
+            </p>
+            <a class="project-link" href="https://github.com/LikhithYedida/data_quality_pipeline" target="_blank">View GitHub repo →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section>
+    <div class="wrapper">
+      <div class="testimonial">
+        “Working with you from the first scoping conversation through to delivery was incredibly smooth. You quickly understood our objectives, simplified a complex dataset and produced dashboards that the whole team actually uses. Communication was consistently clear and prompt, making the process easy to manage.”
+        <strong>Citicorp Credit Services</strong>
+        <span>Data Analyst</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+    <!-- Blog -->
+  <section id="blog">
+    <div class="wrapper">
+      <div class="section-title">Useful Blogs</div>
+      <p class="section-subtitle">
+        Short, practical posts on data visualisation, advanced analytics and building a portfolio that shows how you think, not just what tools you know.
+      </p>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <h3>Designing Accessible Dashboards: A Practical UX Guide</h3>
+          <p>
+            UX and accessibility techniques I use to make Power BI and Tableau dashboards easy to read, inclusive and decision-ready for busy stakeholders.
+          </p>
+          <!-- Real external article on accessible dashboards -->
+          <a href="https://thevizcollective.starschema.com/posts/a-practical-guide-for-accessibility-in-business-intelligence-tools" target="_blank" rel="noopener">
+            READ MORE »
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <h3>How I Build End-to-End Analytics Projects with SQL &amp; Power BI</h3>
+          <p>
+            A real project walkthrough – from defining the question and data model, to DAX measures, visuals and stakeholder sign-off.
+          </p>
+          <!-- Real guide on end-to-end Power BI projects -->
+          <a href="https://chartexpo.com/blog/power-bi-project-end-to-end" target="_blank" rel="noopener">
+            READ MORE »
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <h3>Data Quality First: Simple SQL Checks That Prevent Bad Decisions</h3>
+          <p>
+            Concrete examples of data quality checks in SQL you can plug into your own pipelines before building reports or models on top.
+          </p>
+          <!-- Real article on SQL data quality checks -->
+          <a href="https://medium.com/%40harsh1995hg/sql-for-data-quality-5-practical-checks-every-analyst-must-run-a640ee624c2d" target="_blank" rel="noopener">
+            READ MORE »
+          </a>
+        </article>
+      </div>
+
+      <div class="blog-cta">
+        <!-- You can point this to your own future blog index, or just one of the above resources for now -->
+        <a href="https://chartexpo.com/blog/power-bi-project-end-to-end" target="_blank" rel="noopener">
+          All blog posts
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Coming soon -->
+  <section>
+    <div class="wrapper">
+      <div class="coming-grid">
+        <div class="coming-text">
+          <h2 class="section-title" style="text-align:left; margin-bottom:0.4rem;">Coming soon</h2>
+          <p>
+            I’m working on a short, practical series on how to take a raw dataset and turn it into a complete analytics project – from SQL and data quality to UX/UI and advanced analytics.
+          </p>
+          <p>
+            If you’d like early access to templates, queries and walkthrough videos, leave your email below. No spam, just useful data content.
+          </p>
+          <form class="coming-form">
+            <label for="newsletter-email">Email</label>
+            <input id="newsletter-email" type="email" placeholder="you@example.com" />
+            <button type="submit">Keep me updated</button>
+            <div class="coming-note">
+              Your data belongs to you – I’ll only use your email for updates related to this content and you can unsubscribe at any time.
+            </div>
+          </form>
+        </div>
+
+        <div class="coming-img">
+          <div>
+            <strong>Workshop series sneak peek</strong>
+            <p style="margin-top:0.5rem;">
+              • Defining the problem and success metrics<br />
+              • Building a robust SQL data model<br />
+              • Designing dashboards with UX/UI thinking<br />
+              • Communicating insights with confidence
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrapper">
+      <div class="section-title">Get in touch</div>
+      <p class="section-subtitle">
+        Have a project, role or idea you’d like to discuss? Share a few details below and I’ll get back to you with how I can help.
+      </p>
+
+      <div class="contact-card">
+        <p>
+          You can use this form to outline your data, the tools you’re using and what you’d like to achieve – whether it’s a one-off dashboard, process improvement, or an end-to-end analytics solution.
+        </p>
+
+        <form class="contact-form">
+          <div class="field-group">
+            <label for="name">Name *</label>
+            <input id="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field-group">
+            <label for="email">Email address *</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field-group">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Tell me about your project, timeline and tools."></textarea>
+          </div>
+          <div class="contact-submit">
+            <button type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Likhith Yedida – Data Analyst & Analytics Consultant</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+</body>
+</html>
